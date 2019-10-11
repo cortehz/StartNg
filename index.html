@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <title>Blog</title>
+</head>
+
+<style>
+
+    
+    * {
+        outline: none;
+        transition: all 0.5s;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+    }
+    *, ::after, ::before, html, body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    body {
+        overflow-x:hidden;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    ::root {
+        --Nunito:'Nunito', sans-serif;
+        --white: #fff;
+        --dark: #000000;
+    }
+
+    .wrapper {
+        padding: 15px 50px;
+    }
+
+    .d-flex {
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow: row nowrap;
+    }
+
+    .d-flex.justify-content-between {
+        justify-content: space-between;
+    }
+
+    .d-flex.align-items-center {
+        align-items: center;
+    }
+
+    .margin-auto {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .navbar {
+        position: relative;
+        width: 100%;
+        height: 94px;
+        background: #fff;
+        padding: 10px 80px;
+        /* overflow: hidden; */
+    }
+
+    
+    .link > a,
+    .favicon,
+    .heading {
+        font-family: var(--Nunito);
+        font-style: normal;
+        font-weight: bold;
+        letter-spacing: 0.655606px;
+    }
+
+    .favicon {
+        font-size: 23px;
+        line-height: 49px;
+        color: #3A0842;
+    }
+
+    /* .link--container {
+        list-style: none;
+        overflow: hidden;
+        padding: 0 30px;
+        position: relative;
+        height: 100%;
+        width: auto;
+    } */
+
+    .icon {
+        font-size: 26px !important;
+        margin-right: 5px;
+    }
+
+
+    .link {
+        margin-right: 40px;
+    }
+
+    .link > a {
+        font-size: 16px;
+        line-height: 22px;
+        display: block;
+    }
+
+    .link > a:not(.primary-btn) {
+        color: #2A2B2A;
+    }
+
+
+    .primary-btn {
+        background: #2DCE89;
+        color: #fff;
+        padding: 13px 45px;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+
+    .primary-btn:hover {
+        box-shadow: 2px 3px 4px #a0a0a0;
+    }
+
+    .toggle-icon {
+        display: none;
+    }
+    .carousel--box {
+        position: relative;
+        width: 100%;
+        /* width: 1440px; */
+        height: 458px;
+        background-color: rgba(58, 8, 66, 1);
+        background-image: url('https://res.cloudinary.com/dx5lp5drd/image/upload/v1570789179/rectangle42_hohmaz.png');
+        background-size: cover;
+    }
+
+    .carousel--content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .text-content {
+        word-wrap: break-word;
+        word-break: keep-all;
+        writing-mode: horizontal-tb;
+        text-align: left;
+        text-overflow: ellipsis;
+        line-height: 25px;
+        color: var(--white)
+    }
+
+   .circles {
+        width: 100px;
+        height: 100px;
+        margin: 50px auto;
+        text-align: center;
+        /* background: #2DCE89; */
+   }
+
+   .circle {
+       width: 10px;
+       height: 10px;
+       display: inline-block;
+       border-radius: 50%;
+       margin-right: 5px;
+       background: #fff;
+       cursor: pointer;
+   }
+
+   .circle.active {
+       background:#000;
+   }
+    .heading {
+        font-size: 3em;
+        line-height: 55px;
+        text-align: center;
+        color: #fff;
+        padding-bottom: 40px;
+    }
+
+    .page-wrapper {
+        width: 85%;
+        margin: 50px auto;
+    }
+
+    @media (max-width: 991.98px) {
+
+        .navbar {
+            height: auto;
+        }
+
+        .toggle-icon {
+            display: inline-flex;
+            cursor: pointer;
+            padding: 15px 20px;
+            border-radius: 50%;
+        }
+
+        .toggle-icon:active {
+            background: #a0a0a0;
+            
+        }
+        
+        .nav-links.d-flex {
+            flex-direction: column;
+        }
+
+        .nav-links {
+            padding-top: 20px;
+        }
+
+        .link--container {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 94px;
+            width: 100%;
+            z-index: 3;
+            background: #fff;
+            text-align: center;
+            border-top: 1px solid #a0a0a0;
+        }
+
+        .link--container.active {
+            display: block;
+        }
+
+        .link, .favicon {
+            margin: 0 0 25px 0;
+        }
+
+        .heading {
+        font-size: 2em;
+        }
+    }
+
+</style>
+
+<body>
+    <header>
+        <nav class="wrapper navbar d-flex justify-content-between align-items-center">
+            <a href="#" class="favicon">
+                <i class="fas fa-power-off icon"></i> <span>Start.ng</span>
+            </a>
+            <ul class="link--container">
+                <div class="nav-links d-flex align-items-center">
+                    <li class="link">
+                        <a href="#">About Us</a>
+                    </li>
+                    <li class="link">
+                        <a href="#">Courses</a>
+                    </li>
+                    <li class="link">
+                        <a href="#">Hire a Grad</a>
+                    </li>
+                    <li class="link">
+                        <a href="#">Contact us</a>
+                    </li>
+                    <li class="link">
+                        <a href="#" class="primary-btn">Start Learning</a>
+                    </li>
+                </div>
+            </ul>
+            <i class="fa fa-bars icon toggle-icon"></i>
+        </nav>
+        <div class="carousel--box">
+            <div class="carousel--content">
+                <h2 class="heading">How much will I earn as a UI/UX Designer?</h2>
+                <div class="margin-auto">
+                    <!-- <div> -->
+                        <a href="#" class="primary-btn padding-bottom">Read</a>
+                    <!-- </div> -->
+                    <div class="circles">
+                        <div class="circle active"></div> 
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-wrapper">
+            <section class="blog-posts">
+
+            </section>
+        </div>
+    </main>
+
+    <script type="text/javascript">
+
+        const toggleNav = (nav)=> {
+            (nav.classList.contains('active')) ? (
+                nav.classList.remove('active')
+            ) : (nav.classList.add('active'))
+        }
+
+        const toggleIcon = document.querySelector('.toggle-icon');
+        const nav = document.querySelector('.link--container');
+
+        toggleIcon.addEventListener('click', ()=> toggleNav(nav));
+    </script>
+</body>
+</html>
