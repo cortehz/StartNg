@@ -48,7 +48,51 @@
     .wrapper {
         padding: 15px 50px;
     }
+     /* BODY SECTION*/
+    .text-center {
+        text-align:center;
+        margin-bottom: 1.75rem;
+    }
 
+    form {
+        margin:auto;
+        max-width: 700px;
+    }
+
+    form.search_input input[type=text] {
+       padding: 10px;
+       font-size: 17px;
+       border: 1px solid grey;
+       float: left;
+       width: 80%;
+       background: #fff;
+    }
+
+    /* Style the submit button */
+    form.search_input button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: #2DCE89;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+   }
+
+   form.search_input button:hover {
+     background: #15c478;
+   }
+
+   /* Clear floats */
+   form.search_input::after {
+    content: "";
+    clear: both;
+    display: table;
+   }
+
+    /* END */
     .d-flex {
         display: inline-flex;
         justify-content: flex-start;
@@ -301,7 +345,12 @@
     <main>
         <div class="page-wrapper">
             <section class="blog-posts">
+                   <h2 class="text-center">StartNG BLOG</h2>
 
+                   <form class="search_input" action="#">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
             </section>
         </div>
     </main>
