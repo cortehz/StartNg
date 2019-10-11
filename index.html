@@ -139,13 +139,25 @@ color: #000000;
        margin-bottom: 1rem;
    }
 
+   @media (max-width: 940px){
+    .info .container .info_description{
+      margin: 0 1.75rem !important;
+    } 
+   }
+
    @media (max-width: 800px){
     .info .container .info_description{
-        margin:0 1.75rem 0 0;
+        margin:0 1.75rem !important;
     }  
    }
 
-   @media (max-width: 670px){
+   @media (max-width: 730px){
+        .date {
+            position:relative;
+            top: 30px !important;
+            left: 30px !important;
+        }
+
        .info {
            font-size: 17px;
        }
